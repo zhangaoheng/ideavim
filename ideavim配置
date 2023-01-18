@@ -1,1 +1,120 @@
+let mapleader = "\<space>"
 
+inoremap jj <ESC>
+inoremap jk <ESC>
+inoremap kk <ESC>
+inoremap kj <ESC>
+
+" set-handklerk
+sethandler <C-C> n-v:ide i:vim
+sethandler <C-V> i:ide n-v:vim
+
+" Do incremental searching.
+set incsearch
+
+set nu
+set  relativenumber
+
+"set keep-english-in-normal
+set keep-english-in-normal-and-restore-in-insert
+
+syntax on
+set ruler
+
+" 共享系统粘贴板
+set clipborad=unamed
+" 打开行号
+set number
+" 打开相对行号
+" set relativenumber
+" 设置命令历史记录条数
+set history=2000
+" 关闭兼容vi
+set nocompatible
+" 开启语法高亮功能
+syntax enable
+" 模式搜索实时预览,增量搜索
+set incsearch
+nnoremap <leader>/ :nohls<CR>
+" 设置搜索高亮
+set hlsearch
+" 忽略大小写 (该命令配合smartcase使用较好，否则不要开启)
+set ignorecase
+" 模式查找时智能忽略大小写
+set smartcase
+" 总是显示状态栏
+set laststatus=2
+" 显示光标当前位置
+set ruler
+" 禁止折行
+set nowrap
+" 将制表符扩展为空格
+set expandtab
+" 设置编辑时制表符占用空格数
+set tabstop=8
+" 设置格式化时制表符占用空格数
+set shiftwidth=4
+" 让 vim 把连续数量的空格视为一个制表符
+set softtabstop=4
+" 基于缩进或语法进行代码折叠
+set foldmethod=indent
+set foldmethod=syntax
+" 启动 vim 时关闭折叠代码
+set nofoldenable
+"添加空行，但仍为normal"
+nmap nj o<Esc>k
+nmap nk O<Esc>j
+
+" 留五行空白
+set so 5
+
+"--------------------easymotion--------------------------
+set easymotion
+map <Leader> <Plug>(easymotion-prefix)
+map  <Leader>w <Plug>(easymotion-bd-w)
+"选择运行配置"
+nnoremap <Leader>R :action ChooseRunConfiguration<CR>
+
+"重命名"
+nmap <Leader>r :action RenameElement<CR>
+
+"跳转"
+nnoremap <Leader>h ^
+nnoremap <Leader>l  $
+nnoremap <Leader><Leader> %
+nmap <Leader>go :action GotoDeclaration<CR>
+"switch windows"
+nmap <Leader>w <C-w><C-w><ESC>  
+nmap <Leader>wl <C-w>l<ESC>
+nmap <Leader>wh <C-w>h<Esc> 
+
+"searchsymotion-prefix)kuuu"
+nnoremap <Leader>f :action FindInPath<cr>
+
+"书签操作"
+nnoremap <Leader>m :action ToggleBookmark<CR>
+nnoremap <Leader>sm :action ShowBookmarks<CR>
+nmap <Leader>M :action ToggleBookmarkWithMnemonic<cr> 
+"快速复制"
+nnoremap <Leader>Y y&
+
+nnoremap <leader>ss :action FileStructurePopup<cr>
+nnoremap <leader>ca :action CloseAllEditorsButActive<cr>
+nnoremap <leader>er :action CloseAllReadonly<cr>
+"--------------------NERDTree=--------------------------
+set NERDTree
+"-------------------multiple-cursors-----------------
+set quick-scope
+set argtextobj
+set  exchange
+"自带快捷键映射"
+"窗口"
+map <Leader>gi :action  ActivateVersionControlToolWindow<cr>
+map <Leader>cl :action  HideAllWindows<cr>
+map <Leader>pr :action  ActivateProjectToolWindow<cr>
+map <Leader>co :action  ActivateCommitToolWindow<cr>
+map <Leader>rf :action  RecentFiles<cr>
+map <Leader>ml :action  MoveTabRight<cr>
+map <Leader>mj :action  MoveTabDown<cr>
+"tabs"
+map <Leader>ct :action  CloseContent<cr>
