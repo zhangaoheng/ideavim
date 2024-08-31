@@ -1,0 +1,40 @@
+  set relativenumber
+ 40 " 设置命令历史记录条数
+ 39 set history=2000
+ 38 " 关闭兼容vi
+ 37 set nocompatible
+ 36 " 开启语法高亮功能
+ 35 syntax enable
+ 34 " 模式搜索实时预览,增量搜索
+ 33 set incsearch
+ 32 nnoremap <leader>/ :nohls<CR>
+ 31 " 设置搜索高亮
+ 30 set hlsearch
+ 29 " 忽略大小写 (该命令配合smartcase使用较好，否则不要开启)
+ 28 set ignorecase
+ 27 " 模式查找时智能忽略大小写
+ 26 set smartcase
+ 25 " 总是显示状态栏
+ 24 set laststatus=2
+ 23 " 显示光标当前位置
+ 22 set ruler
+ 21 " 禁止折行
+ 20 set nowrap
+ 19 " 将制表符扩展为空格
+ 18 set expandtab
+ 17 " 设置编辑时制表符占用空格数
+ 16 set tabstop=8
+ 15 " 设置格式化时制表符占用空格数
+ 14 set shiftwidth=4
+ 13 " 让 vim 把连续数量的空格视为一个制表符
+ 12 set softtabstop=4
+ 11 " 基于缩进或语法进行代码折叠
+ 10 set foldmethod=indent
+  9 set foldmethod=syntax
+  8 " 启动 vim 时关闭折叠代码
+  7 set nofoldenable
+  6 "
+  5 "添加空行，但仍为normal"
+  4 "
+  3 nmap nj o<Esc>k
+  2 nmap nk O<Esc>j
